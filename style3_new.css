@@ -1,0 +1,278 @@
+* {box-sizing: border-box;}
+body {font-family: Arial, sans-serif;
+		font-size: 14pt;}
+/*Phần Header*/
+.header {display:flex;
+		align-items: center;
+		background-color:#1a365d;
+		height:200px;}
+		
+.header img {float:left;
+			width:120px;
+			margin-left:50px;}
+
+.header h1 {color:white;
+			width:100%;
+			text-align:center;
+			font-size:40pt;
+			text-shadow: 4px 4px 8px #000000;}
+			
+/*Phần Menu nav*/			
+.nav {overflow: hidden;
+       background-color: #2f855a;
+	   height: 45px;}  
+.nav ul {list-style-type: none;
+		margin:0px;
+		padding:0px;
+		display: flex;}
+.nav a {float: left;
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 10px;
+		text-decoration: none;} 
+.nav a:hover {background-color:white;
+				color:#2f855a;}				
+/*Phần Image Gallery*/
+.gallery {display: flex;flex-grow:1;}
+.gal-item {margin: 5px;
+  border: 1px solid #ccc;
+  width: 25%;}
+.gal-item:hover {border: 1px solid #777;}
+.gal-item img {width: 100%;}
+
+/*Phần Article*/
+.tintuc {margin:10px;}
+.tintuc img {float:right;width:400px;
+		   padding-left:14px;}
+.tintuc h3 {text-align:center;
+          color:#1a365d;
+		  font-size: 20pt;}
+.tintuc p {text-align:justify;
+         font-size:14pt;
+ 		 line-height:1.5;}
+.dropcap {float:left; 
+		font-size:60pt;
+		color: #1a365d;
+		line-height:40px;}
+/*Phần Footer*/
+.footer {background-color:#1a365d;
+		padding: 10px 0px;
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;}
+.footer p {margin-left: 100px;
+			color:white;}
+.footer img {width:90px;}
+
+/* --- RESPONSIVE DESIGN --- */
+/* 1. Đảm bảo hình ảnh không vượt quá chiều rộng màn hình */
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* 2. Thiết lập cho màn hình Tablet (Dưới 992px) */
+@media screen and (max-width: 992px) {
+    .header h1 {
+        font-size: 30pt; /* Giảm cỡ chữ tiêu đề */
+    }  
+    .gallery {
+        flex-wrap: wrap; /* Cho phép các ảnh xuống dòng */
+    }    
+    .gal-item {
+        width: calc(50% - 10px); /* Hiển thị 2 ảnh trên một hàng */
+    }
+    .tintuc img {
+        width: 100%; /* Ảnh tin tức chiếm hết chiều rộng */
+        float: none;
+        padding-left: 0;
+        margin-bottom: 15px;
+    }
+}
+/* 3. Thiết lập cho màn hình điện thoại (Dưới 600px) */
+@media screen and (max-width: 600px) {
+    .header {flex-direction: column; /* Xếp logo và tên trường theo chiều dọc */
+        height: auto;
+        padding: 20px 0;}
+    .header img {
+        margin-left: 0;
+        margin-bottom: 10px;}
+    .header h1 {
+        font-size: 20pt;}
+    .nav ul {flex-direction: column; /* Menu dọc cho điện thoại */
+    }
+    .nav {height: auto;}
+    .nav a {
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.1);}
+    .gal-item {width: 100%; /* Mỗi ảnh chiếm 1 hàng */
+        margin: 5px 0;}
+    .footer {flex-direction: column; /* Xếp thông tin footer theo hàng dọc */
+        text-align: center;}
+    .footer p {
+        margin-left: 0; /* Bỏ margin cũ */
+        margin-bottom: 15px;}
+}
+
+
+/* --- CSS BỔ SUNG CHO TRANG LIÊN HỆ --- */
+
+.contact-container {
+    padding: 40px 5%;
+    background-color: #f9f9f9;
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.contact-info h2, .contact-form h2 {
+    color: #1a365d; /* Màu chuẩn header */
+    border-left: 5px solid #2f855a; /* Màu chuẩn nav */
+    padding-left: 15px;
+    margin-bottom: 20px;
+    font-size: 18pt;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Kiểu dáng Form */
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.btn-send {
+    background-color: #2f855a;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-send:hover {
+    background-color: #1a365d;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 150px;
+    background-color: #eee;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+/* Responsive cho di động */
+@media screen and (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
+
+/* --- CSS BỔ SUNG CHO TRANG ĐĂNG NHẬP --- */
+.login-container {
+    padding: 60px 20px;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+.login-card {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.login-header img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+.login-header h2 {
+    color: #1a365d; /* Màu đồng bộ với Header chính */
+    font-size: 18pt;
+    margin: 0;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 11pt;
+}
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 10pt;
+}
+.form-footer a {
+    color: #2f855a;
+    text-decoration: none;
+}
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a365d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #2f855a; /* Chuyển sang màu Nav khi hover */
+}
+
+/* Responsive cho thiết bị nhỏ */
+@media screen and (max-width: 600px) {
+    .login-container {
+        padding: 30px 10px;
+    }
+    .login-card {
+        padding: 20px;
+    }
+}
